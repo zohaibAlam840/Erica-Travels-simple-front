@@ -1,160 +1,83 @@
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-
+import { Mail, Instagram, Youtube, Twitter, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Contact Form Section */}
-      <section className="py-16 bg-white">
-        <div className="px-4 md:px-10">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h1 className="text-3xl font-bold  text-gray-900 mb-4">
-                Contact Us
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Have questions or ready to plan your next adventure? Our travel
-                experts are here to help.
-              </p>
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* Hero */}
+      <section className="bg-gray-900 py-20 text-white">
+        <div className="px-4 md:px-10 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Get in Touch</h1>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">
+            Have a question about my stadium guides? Want to collaborate or just say hi? I&apos;d love to hear from you.
+          </p>
+        </div>
+      </section>
 
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center mr-4">
-                    <Phone className="h-5 w-5 text-teal-600" />
+      <section className="py-20 px-4 md:px-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Contact Info */}
+            <div className="space-y-12">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Connect with Erica</h2>
+                <p className="text-lg text-gray-600 mb-8">
+                  While I&apos;m often on the road (or in a stadium), I do my best to respond to every message from fellow travelers.
+                </p>
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center group-hover:bg-teal-600 transition-colors">
+                    <Mail className="w-6 h-6 text-teal-600 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">
-                      1-800-TRAVEL (1-800-872-835)
-                    </p>
-                    <p className="text-gray-600">
-                      International: +1 234 567 8900
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center mr-4">
-                    <Mail className="h-5 w-5 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@Erica Travelstravel.com</p>
-                    <p className="text-gray-600">
-                      support@Erica Travelstravel.com
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center mr-4">
-                    <MapPin className="h-5 w-5 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900">Main Office</h3>
-                    <p className="text-gray-600">123 Travel Street</p>
-                    <p className="text-gray-600">Cityville, Country, 12345</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center mr-4">
-                    <Clock className="h-5 w-5 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900">Business Hours</h3>
-                    <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM
-                    </p>
-                    <p className="text-gray-600">
-                      Saturday: 10:00 AM - 4:00 PM
-                    </p>
-                    <p className="text-gray-600">Sunday: Closed</p>
+                    <p className="text-sm text-gray-500 font-medium">Email Me</p>
+                    <p className="text-lg font-bold text-gray-900 leading-none">hi@ericatravels.com</p>
                   </div>
                 </div>
               </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-6 font-sans">Social Channels</h3>
+                <div className="grid grid-cols-2 gap-6">
+                  <LinkItem icon={Instagram} label="Instagram" handle="@ericatravels" color="text-pink-600" />
+                  <LinkItem icon={Youtube} label="YouTube" handle="Erica's Tours" color="text-red-600" />
+                  <LinkItem icon={Twitter} label="Twitter" handle="@ericatours" color="text-blue-400" />
+                  <LinkItem icon={Mail} label="Newsletter" handle="Weekly Updates" color="text-teal-600" />
+                </div>
+              </div>
+
+              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 className="font-bold text-gray-900 mb-2">Collabs & Inquiries</h3>
+                <p className="text-gray-600">
+                  For brand partnerships, media kits, or speaking engagements, please mention "Partnership" in your email subject.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-xl">
-              <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Form */}
+            <div className="bg-white rounded-3xl shadow-xl shadow-teal-900/5 p-8 md:p-12 border border-gray-100">
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="first-name" className="text-sm font-medium">
-                      First Name
-                    </label>
-                    <Input id="first-name" placeholder="John" />
+                    <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Your Name</label>
+                    <Input placeholder="John Doe" className="h-12 bg-gray-50 border-transparent focus:bg-white focus:border-teal-600 transition-all" />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="last-name" className="text-sm font-medium">
-                      Last Name
-                    </label>
-                    <Input id="last-name" placeholder="Doe" />
+                    <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Email Address</label>
+                    <Input placeholder="john@example.com" type="email" className="h-12 bg-gray-50 border-transparent focus:bg-white focus:border-teal-600 transition-all" />
                   </div>
                 </div>
-
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="john.doe@example.com"
-                  />
+                  <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Subject</label>
+                  <Input placeholder="Question about Lusail Guide" className="h-12 bg-gray-50 border-transparent focus:bg-white focus:border-teal-600 transition-all" />
                 </div>
-
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-medium">
-                    Phone Number
-                  </label>
-                  <Input id="phone" placeholder="+1 (555) 000-0000" />
+                  <label className="text-sm font-bold text-gray-700 uppercase tracking-wider">Message</label>
+                  <Textarea placeholder="Type your message here..." rows={6} className="bg-gray-50 border-transparent focus:bg-white focus:border-teal-600 transition-all resize-none" />
                 </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="inquiry-type" className="text-sm font-medium">
-                    Inquiry Type
-                  </label>
-                  <Select>
-                    <SelectTrigger id="inquiry-type">
-                      <SelectValue placeholder="Select inquiry type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="general">General Inquiry</SelectItem>
-                      <SelectItem value="booking">New Booking</SelectItem>
-                      <SelectItem value="existing">Existing Booking</SelectItem>
-                      <SelectItem value="custom">Custom Itinerary</SelectItem>
-                      <SelectItem value="feedback">Feedback</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us about your travel plans or questions..."
-                    rows={5}
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-base cursor-pointer py-6"
-                >
-                  <Send className="h-4 w-4 mr-2" />
+                <Button className="w-full h-14 bg-teal-600 hover:bg-teal-700 text-lg font-bold rounded-xl shadow-lg shadow-teal-600/20">
+                  <Send className="w-5 h-5 mr-2" />
                   Send Message
                 </Button>
               </form>
@@ -163,59 +86,20 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-16 bg-gray-50">
-        <div className=" px-4 md:px-10">
+      {/* Map Embed - Now pointing to Qatar */}
+      <section className="py-20 bg-gray-50 border-t">
+        <div className="px-4 md:px-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold  text-gray-900 mb-4">
-              Our Locations
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Visit one of our offices around the world
-            </p>
+            <h2 className="text-3xl font-bold mb-4">Location Showcase</h2>
+            <p className="text-gray-600">Where you can find my stadium tours happening.</p>
           </div>
-          <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden">
-            <div className="h-full w-full">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30766738.48171446!2d60.9691763862997!3d19.725163578221917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1746880287802!5m2!1sen!2sin"
-                className="w-full h-full border-0"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {offices.map((office, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-2">{office.city}</h3>
-                <p className="text-gray-600 mb-2">{office.address}</p>
-                <p className="text-gray-600">{office.phone}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="px-4 md:px-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find quick answers to common questions
-            </p>
-          </div>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200 pb-6">
-                <h3 className="font-bold text-lg mb-2">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
+          <div className="aspect-[21/9] rounded-3xl overflow-hidden shadow-inner bg-gray-200">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115456.91572017282!2d51.42445104278272!3d25.286704175780524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c534ffdce983%3A0x77722f3b8911c620!2sDoha%2C%20Qatar!5e0!3m2!1sen!2sin!4v1740920000000!5m2!1sen!2sin"
+              className="w-full h-full border-0 grayscale contrast-125 opacity-80"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -223,49 +107,14 @@ export default function ContactPage() {
   );
 }
 
-// Sample data
-const offices = [
-  {
-    city: "New York",
-    address: "123 Broadway, New York, NY 10001, USA",
-    phone: "+1 (212) 555-1234",
-  },
-  {
-    city: "London",
-    address: "45 Oxford Street, London, W1D 2DZ, UK",
-    phone: "+44 20 7123 4567",
-  },
-  {
-    city: "Singapore",
-    address: "78 Orchard Road, Singapore 238839",
-    phone: "+65 6123 4567",
-  },
-];
-
-const faqs = [
-  {
-    question: "How do I book a trip?",
-    answer:
-      "You can book a trip through our website by selecting your desired destination and following the booking process, or you can contact our travel experts directly by phone or email for personalized assistance.",
-  },
-  {
-    question: "What payment methods do you accept?",
-    answer:
-      "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, bank transfers, and in some locations, we offer payment plans.",
-  },
-  {
-    question: "Can I customize my travel package?",
-    answer:
-      "We specialize in creating custom itineraries tailored to your preferences, budget, and schedule. Contact our team to start planning your personalized journey.",
-  },
-  {
-    question: "What is your cancellation policy?",
-    answer:
-      "Our cancellation policy varies depending on the destination and package. Generally, cancellations made 60+ days before departure receive a full refund minus a small administrative fee. Please refer to the specific terms for your booking or contact us for details.",
-  },
-  {
-    question: "Do you offer travel insurance?",
-    answer:
-      "Yes, we offer comprehensive travel insurance options to protect your trip investment. We strongly recommend purchasing travel insurance for all international trips.",
-  },
-];
+function LinkItem({ icon: Icon, label, handle, color }) {
+  return (
+    <div className="flex items-start gap-4 p-4 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-teal-50 transition-all cursor-pointer group">
+      <Icon className={`w-6 h-6 ${color}`} />
+      <div>
+        <p className="text-sm font-bold text-gray-900 leading-none mb-1">{label}</p>
+        <p className="text-xs text-gray-500">{handle}</p>
+      </div>
+    </div>
+  );
+}

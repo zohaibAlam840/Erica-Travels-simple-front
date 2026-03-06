@@ -14,9 +14,9 @@ export default function Header() {
 
   const routes = [
     { name: "Home", path: "/" },
-    { name: "Destinations", path: "/destinations" },
-    { name: "About Us", path: "/about" },
-    { name: "Packages", path: "/packages" },
+    { name: "Stadiums", path: "/stadiums" },
+    { name: "Blog", path: "/blog" },
+    { name: "About Erica", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -33,9 +33,8 @@ export default function Header() {
             <Link
               key={route.path}
               href={route.path}
-              className={`text-base font-medium transition-colors hover:text-teal-600 ${
-                pathname === route.path ? "text-teal-600" : "text-gray-600"
-              }`}
+              className={`text-base font-medium transition-colors hover:text-teal-600 ${pathname === route.path ? "text-teal-600" : "text-gray-600"
+                }`}
             >
               {route.name}
             </Link>
@@ -43,12 +42,8 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <Phone className="h-4 w-4 text-teal-600" />
-            <span className="text-sm font-medium">1-800-TRAVEL</span>
-          </div>
           <Button className="bg-teal-600 hover:bg-teal-700 cursor-pointer text-base">
-            Book Now
+            Explore Stadiums
           </Button>
         </div>
 
@@ -66,16 +61,15 @@ export default function Header() {
                 <Link
                   key={route.path}
                   href={route.path}
-                  className={`text-lg font-medium transition-colors hover:text-teal-600 ${
-                    pathname === route.path ? "text-teal-600" : "text-gray-600"
-                  }`}
+                  className={`text-lg font-medium transition-colors hover:text-teal-600 ${pathname === route.path ? "text-teal-600" : "text-gray-600"
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {route.name}
                 </Link>
               ))}
               <Button className="mt-4 bg-teal-600 hover:bg-teal-700">
-                Book Now
+                Explore Stadiums
               </Button>
             </nav>
           </SheetContent>

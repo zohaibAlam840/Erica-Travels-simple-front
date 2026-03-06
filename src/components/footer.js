@@ -19,11 +19,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">
-              Erica Travels Travel
+              Erica&apos;s Qatar Tour
             </h3>
             <p className="mb-4 text-gray-400">
-              Making your travel dreams come true since 2005. Explore the world
-              with confidence and create unforgettable memories.
+              Exploring the architectural wonders and cultural heritage of Qatar, one stadium at a time. Follow my journey and plan your own stadium adventure.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-teal-400">
@@ -55,18 +54,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/destinations"
+                  href="/stadiums"
                   className="text-gray-400 hover:text-teal-400"
                 >
-                  Destinations
+                  Stadiums
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/packages"
+                  href="/blog"
                   className="text-gray-400 hover:text-teal-400"
                 >
-                  Travel Packages
+                  Erica&apos;s Blog
                 </Link>
               </li>
               <li>
@@ -74,7 +73,7 @@ export default function Footer() {
                   href="/about"
                   className="text-gray-400 hover:text-teal-400"
                 >
-                  About Us
+                  About Erica
                 </Link>
               </li>
               <li>
@@ -90,22 +89,10 @@ export default function Footer() {
 
           <div>
             <h3 className="text-lg font-bold mb-4 text-white">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-teal-500 mr-2 mt-0.5" />
-                <span className="text-gray-400">
-                  123 Travel Street, Cityville, Country, 12345
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 text-teal-500 mr-2" />
-                <span className="text-gray-400">1-800-TRAVEL</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 text-teal-500 mr-2" />
-                <span className="text-gray-400">info@Erica Travelstravel.com</span>
-              </li>
-            </ul>
+            <li className="flex items-center">
+              <Mail className="h-5 w-5 text-teal-500 mr-2" />
+              <span className="text-gray-400">hi@ericatravels.com</span>
+            </li>
           </div>
 
           <div>
@@ -128,7 +115,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Erica Travels Travel. All rights
+            &copy; {new Date().getFullYear()} Erica&apos;s Qatar Tour. All rights
             reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
