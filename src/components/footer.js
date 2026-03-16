@@ -115,7 +115,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Erica&apos;s Qatar Tour. All rights
+            &copy; {new Date().getFullYear()} Hamad AL Jaber Qatar Tour. All rights
             reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
