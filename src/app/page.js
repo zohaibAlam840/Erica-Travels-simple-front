@@ -1,211 +1,89 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, MapPin, Camera } from "lucide-react";
-
+import { ArrowRight, Play, MapPin, Search, Calendar, Clock, Star, Heart, Shield, Plane, Music, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full h-screen">
-        <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="/hero-bg.jpg"
-            alt="World Cup Stadium"
-            fill
-            className="object-cover"
-            priority
+    <div className="flex flex-col min-h-screen bg-white overflow-hidden font-sans">
+      {/* 1. Hero Section */}
+      <section className="relative h-[900px] w-full flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/qatar-scenic.png" 
+            alt="Qatar Scenic" 
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
-        <div className=" relative z-20 h-full flex flex-col justify-center items-center text-center px-4 md:px-6 py-12 space-y-6 text-white">
-          <div className="space-y-4 max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Erica&apos;s Qatar Stadium Tour
+
+        {/* Hero Content */}
+        <div className="relative z-10 container mx-auto px-6 md:px-20 text-center text-white">
+          <div className="flex flex-col items-center max-w-4xl mx-auto space-y-8">
+            <div className="bg-orange-500/80 backdrop-blur-sm px-4 py-1 rounded-sm text-[12px] font-bold tracking-widest uppercase">
+              Explore Qatar
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
+              No matter where you're going to, we'll take you there
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-              Follow my journey through the architectural marvels of the 2022 World Cup stadiums and find the best travel tips for your next visit.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Link href="/stadiums">
-              <Button
-                size="lg"
-                className="bg-teal-600 text-base cursor-pointer hover:bg-teal-700 group px-8"
-              >
-                Explore Stadiums
-                <ArrowRight className="group-hover:translate-x-1 transition-all h-4 w-4" />
-              </Button>
-            </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/10 backdrop-blur-md border-white/20 text-white text-base cursor-pointer hover:bg-white/20"
-            >
-              Watch My Vlog
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Stadiums */}
-      <section className="py-20 bg-white">
-        <div className="px-4 md:px-10">
-          <div className="flex flex-col items-center text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Featured Stadiums
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl">
-              From the golden bowl of Lusail to the tent-inspired Al Bayt, discover the unique stories behind Qatar&apos;s iconic venues.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {stadiums.map((stadium, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 group"
-              >
-                <div className="relative h-72 w-full overflow-hidden">
-                  <Image
-                    src={stadium.image}
-                    alt={stadium.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <h3 className="font-bold text-2xl mb-1">{stadium.name}</h3>
-                    <div className="flex items-center text-white/80">
-                      <MapPin className="h-4 w-4 mr-1 text-teal-400" />
-                      <span className="text-sm font-medium">{stadium.location}</span>
-                    </div>
+            
+            {/* Search Bar */}
+            <div className="w-full max-w-5xl mt-12 bg-white/20 backdrop-blur-md p-2 rounded-xl flex flex-col md:flex-row items-center gap-2 shadow-2xl border border-white/30">
+              <div className="flex-1 w-full grid grid-cols-1 md:grid-cols-3 gap-2">
+                <div className="bg-white/10 hover:bg-white/20 transition-colors px-6 py-4 rounded-lg flex items-center gap-3 text-left cursor-pointer border border-white/10 group">
+                  <MapPin className="text-orange-400 w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <p className="text-[10px] text-white/60 font-bold uppercase tracking-wider">Where to?</p>
+                    <p className="text-sm font-bold">Doha, Qatar</p>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <p className="text-gray-600 mb-6 line-clamp-2">
-                    {stadium.description}
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-semibold text-teal-600 uppercase tracking-wider">{stadium.capacity} Capacity</span>
-                    <Link href={`/stadiums/${stadium.id}`}>
-                      <Button
-                        variant="ghost"
-                        className="text-teal-600 hover:text-teal-700 hover:bg-teal-50 p-0"
-                      >
-                        View Details &rarr;
-                      </Button>
-                    </Link>
+                <div className="bg-white/10 hover:bg-white/20 transition-colors px-6 py-4 rounded-lg flex items-center gap-3 text-left cursor-pointer border border-white/10 group">
+                  <Plane className="text-orange-400 w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <p className="text-[10px] text-white/60 font-bold uppercase tracking-wider">Travel Type</p>
+                    <p className="text-sm font-bold">Stadium Tour</p>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                </div>
+                <div className="bg-white/10 hover:bg-white/20 transition-colors px-6 py-4 rounded-lg flex items-center gap-3 text-left cursor-pointer border border-white/10 group">
+                  <Calendar className="text-orange-400 w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <p className="text-[10px] text-white/60 font-bold uppercase tracking-wider">Duration</p>
+                    <p className="text-sm font-bold">7 Days</p>
+                  </div>
+                </div>
+              </div>
+              <button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-lg font-bold transition-all shadow-lg hover:shadow-orange-500/40">
+                Submit
+              </button>
+            </div>
 
-      {/* Blog & Media Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="px-4 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <span className="text-teal-600 font-bold uppercase tracking-widest text-sm">Life of a Traveler</span>
-              <h2 className="text-4xl font-bold text-gray-900 leading-tight">
-                Get the Latest Travel Insights from Erica&apos;s Blog
-              </h2>
-              <p className="text-xl text-gray-600">
-                Beyond the stadiums, I share my personal experiences navigating Qatar, from the best local eats to cultural etiquette and hidden gems.
+            {/* Social Indicator */}
+            <div className="flex items-center gap-4 mt-8">
+              <div className="flex -space-x-3">
+                <img src="/user1.jpg" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
+                <img src="/user2.jpg" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
+                <img src="/user3.jpg" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-orange-500 flex items-center justify-center text-[10px] font-bold">+</div>
+              </div>
+              <p className="text-sm font-medium text-white/90 underline decoration-orange-500 underline-offset-4">
+                2,500+ people booked Stadium Tours in last 24 hours
               </p>
-              <div className="space-y-4">
-                {blogPreviews.map((post, i) => (
-                  <div key={i} className="flex gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                    <div className="w-24 h-24 relative flex-shrink-0 rounded-md overflow-hidden">
-                      <Image src={post.image} fill className="object-cover" alt="" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-1">{post.title}</h4>
-                      <p className="text-sm text-gray-500">{post.date}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <Link href="/blog">
-                <Button size="lg" className="bg-teal-600 text-white px-8">Read All Posts</Button>
-              </Link>
-            </div>
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black flex items-center justify-center group cursor-pointer">
-              <div className="text-center text-white p-8 z-20">
-                <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-700 transition-colors shadow-xl">
-                  <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-2">Vlog: Lusail Architecture</h3>
-                <p className="text-white/70 italic">Click to watch on YouTube</p>
-              </div>
-              <Image
-                src="/hero-bg.jpg"
-                fill
-                className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 z-10"
-                alt="Watch vlog"
-              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Media CTA */}
-      <section className="py-20 bg-white border-t">
-        <div className="px-4 md:px-10 text-center">
-          <h2 className="text-3xl font-bold mb-10">Follow the Journey</h2>
-          <div className="flex flex-wrap justify-center gap-8 text-lg font-bold">
-            <Link href="#" className="text-gray-400 hover:text-pink-600 transition-colors">Instagram</Link>
-            <Link href="#" className="text-gray-400 hover:text-black transition-colors">TikTok</Link>
-            <Link href="#" className="text-gray-400 hover:text-red-600 transition-colors">YouTube</Link>
-            <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors">Twitter</Link>
-          </div>
+      {/* 5. CTA Banner */}
+      <section className="relative h-[500px] w-full flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <img src="/doha-skyline.png" className="w-full h-full object-cover shadow-2xl" />
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+        </div>
+        <div className="relative z-10 text-center text-white px-6">
+          <h2 className="text-5xl md:text-8xl font-black mb-8 italic tracking-tighter">Your Journey Starts Here<span className="text-orange-500">.</span></h2>
+          <div className="w-32 h-1 bg-orange-500 mx-auto"></div>
         </div>
       </section>
     </div>
   );
 }
-
-// Data for Stadiums
-const stadiums = [
-  {
-    id: "lusail",
-    name: "Lusail Stadium",
-    location: "Lusail City",
-    image: "/hero-bg.jpg",
-    capacity: "88,966",
-    description: "The venue for the 2022 World Cup Final, inspired by the play of light and shadow that characterizes the fanar lantern.",
-  },
-  {
-    id: "al-bayt",
-    name: "Al Bayt Stadium",
-    location: "Al Khor",
-    image: "/african-safari.jpg",
-    capacity: "68,895",
-    description: "Modeled after the tents traditionally used by nomadic peoples in Qatar and the Gulf region.",
-  },
-  {
-    id: "al-janoub",
-    name: "Al Janoub Stadium",
-    location: "Al Wakrah",
-    image: "/beach.jpg",
-    capacity: "44,325",
-    description: "Designed by the late Zaha Hadid, its flowing lines reflect the sails of traditional dhow boats.",
-  },
-];
-
-const blogPreviews = [
-  {
-    title: "5 Things I Wish I Knew Before Visiting Doha",
-    date: "Oct 12, 2025",
-    image: "/cultural.jpg",
-  },
-  {
-    title: "Best Spots for Sunset Photography in Lusail",
-    date: "Sep 28, 2025",
-    image: "/adventure.jpg",
-  },
-];

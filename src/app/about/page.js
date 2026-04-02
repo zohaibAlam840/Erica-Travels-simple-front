@@ -1,124 +1,90 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Camera, Map, Globe, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Camera, Map, Globe, Heart, Compass, Star } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white font-sans">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh]">
-        <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="/travel-team-bg.avif"
-            alt="Erica exploring Qatar"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
-        </div>
-        <div className="relative z-20 h-full flex flex-col justify-center items-center px-4 md:px-10 py-12 text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
-            Meet Erica
-          </h1>
-          <p className="text-xl md:text-3xl text-white/90 max-w-2xl font-light italic">
-            &quot;Capturing the soul of modern architecture through the lens of a traveler.&quot;
+      <section className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden">
+        <Image src="/qatar-scenic.png" alt="About Hero" fill className="object-cover" />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+        <div className="relative z-10 text-center text-white px-6">
+          <h4 className="text-orange-500 font-bold uppercase tracking-[0.3em] text-sm mb-4">The Journey</h4>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 italic">Capturing Qatar's Soul</h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto font-medium leading-relaxed italic">
+            Discover the visionary archive dedicated to the architectural wonders and cultural heritage of Qatar.
           </p>
         </div>
       </section>
 
-      {/* Bio Section */}
-      <section className="py-20 bg-white">
-        <div className="px-4 md:px-10 max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src="/user3.jpg"
-                alt="Erica"
-                fill
-                className="object-cover"
-              />
+      <section className="container mx-auto px-6 md:px-20 py-24 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="relative group">
+          <div className="relative z-10 rounded-[60px] border-[10px] border-gray-50 overflow-hidden aspect-[3/4] shadow-2xl skew-y-3 group-hover:skew-y-0 transition-transform duration-1000">
+             <Image src="/al-bayt.png" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" alt="Qatari Architecture" />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#111] rounded-[40px] -z-10 flex items-center justify-center text-orange-500 shadow-2xl rotate-12 group-hover:rotate-0 transition-transform duration-1000">
+            <Compass size={80} />
+          </div>
+          <div className="absolute -top-10 -left-10 w-32 h-32 bg-orange-500 rounded-full -z-10 blur-3xl opacity-20"></div>
+        </div>
+
+        <div className="space-y-12">
+          <div className="space-y-6">
+            <h2 className="text-5xl md:text-7xl font-black text-gray-900 italic leading-none tracking-tighter">
+              The Architecture<br/>of <span className="text-orange-500">Passion.</span>
+            </h2>
+            <p className="text-2xl text-gray-400 font-bold italic">Erica Travels: A Visionary Archive.</p>
+          </div>
+          <div className="space-y-8 text-xl text-gray-500 leading-relaxed font-medium">
+            <p>
+              Erica Travels was born from a fascination with the impossible. Not just the sport, but the monumental structures that rose from the sands of Qatar to redefine modern engineering.
+            </p>
+            <div className="p-10 bg-black text-white rounded-[50px] relative overflow-hidden group">
+               <p className="relative z-10 italic text-2xl font-black leading-tight">
+                 "This platform celebrates the interplay between futuristic design and ancient nomadic heritage."
+               </p>
+               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-bl-full"></div>
             </div>
-            <div className="space-y-8">
-              <h2 className="text-4xl font-bold text-gray-900">
-                Beyond the Game
-              </h2>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Welcome! I&apos;m Erica, a storyteller and architecture enthusiast. My obsession with World Cup stadiums began long before the first whistle blew in Qatar. I was fascinated by how these structures blend futuristic engineering with thousands of years of nomadic history.
-                </p>
-                <p>
-                  This website isn&apos;t a booking agency. It&apos;s my personal journal and a guide for fellow travelers who want to see these marvels for themselves. I spent months on the ground in Qatar, documenting every corner of the 8 stadiums, eating local food, and learning the rhythms of Doha.
-                </p>
-                <p>
-                  Whether you&apos;re a football fan, a design nerd, or just looking for your next adventure, I hope my guides help you see Qatar in a whole new light.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-6 pt-4">
-                <div className="flex items-center gap-3 text-teal-600 font-bold">
-                  <Camera className="w-6 h-6" />
-                  <span>Vlogger</span>
-                </div>
-                <div className="flex items-center gap-3 text-teal-600 font-bold">
-                  <Map className="w-6 h-6" />
-                  <span>Travel Guide</span>
-                </div>
-                <div className="flex items-center gap-3 text-teal-600 font-bold">
-                  <Globe className="w-6 h-6" />
-                  <span>Culture Scout</span>
-                </div>
-              </div>
+            <p>
+              This isn't just a travel site; it's a digital gallery dedicated to the curves of Al Janoub, the grandeur of Lusail, and the cultural tapestry woven into every brick and beam of Doha.
+            </p>
+          </div>
+          <div className="pt-10 flex gap-12 border-t border-gray-100">
+            <div className="space-y-2">
+              <p className="text-5xl font-black text-black">8+</p>
+              <p className="text-[10px] font-black text-orange-500 uppercase tracking-[0.3em]">Landmarks</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-5xl font-black text-black">20K</p>
+              <p className="text-[10px] font-black text-orange-500 uppercase tracking-[0.3em]">Masterpieces</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-5xl font-black text-black">15</p>
+              <p className="text-[10px] font-black text-orange-500 uppercase tracking-[0.3em]">Exhibitions</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What I Do */}
-      <section className="py-20 bg-gray-50">
-        <div className="px-4 md:px-10 max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">How I Can Help You</h2>
-            <p className="text-xl text-gray-600">I don&apos;t sell packages. I share knowledge.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-10">
-            <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
-                <Map className="w-7 h-7 text-teal-600" />
+      {/* Philosophy Section */}
+      <section className="bg-gray-50 py-24">
+        <div className="container mx-auto px-6 md:px-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { icon: Map, title: "Detailed Guides", desc: "Step-by-step instructions on how to reach each stadium and nearby spots." },
+              { icon: Heart, title: "Cultural Insights", desc: "Understanding the soul and heritage behind the steel." },
+              { icon: Star, title: "Vlogs & Media", desc: "Walk with me through the gates and experience the atmosphere." }
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-12 rounded-[40px] shadow-xl shadow-gray-200/50 space-y-6 hover:-translate-y-4 transition-all group">
+                <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                  <item.icon size={32} />
+                </div>
+                <h3 className="text-2xl font-black italic">{item.title}</h3>
+                <p className="text-gray-500 font-medium leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Detailed Guides</h3>
-              <p className="text-gray-600">Step-by-step instructions on how to reach each stadium, what to see nearby, and the best vantage points for photos.</p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
-                <Heart className="w-7 h-7 text-teal-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Cultural Insights</h3>
-              <p className="text-gray-600">Understanding the soul behind the steel. I dive into the heritage that inspired each stadium&apos;s unique design.</p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
-                <Camera className="w-7 h-7 text-teal-600" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Vlogs & Media</h3>
-              <p className="text-gray-600">Walk with me through the gates. My video tours give you a real sense of the atmosphere and scale of these venues.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-teal-600 text-white">
-        <div className="px-4 md:px-10 text-center space-y-8">
-          <h2 className="text-4xl font-bold">Ready to explore Qatar?</h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">Start with my most popular stadium guide or check out the latest blog posts for travel tips.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/stadiums">
-              <Button size="lg" className="bg-white text-teal-600 hover:bg-white/90 px-8">Explore Stadiums</Button>
-            </Link>
-            <Link href="/blog">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8">Read the Blog</Button>
-            </Link>
+            ))}
           </div>
         </div>
       </section>
